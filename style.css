@@ -1,0 +1,502 @@
+@import url('http://fonts.cdnfonts.com/css/arial');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Signika+Negative&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: rgb(0, 0, 0);
+}
+
+nav {
+    width: 210px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+}
+
+.logo {
+    width: 100%;
+    height: 240px;
+    cursor: pointer;
+    position: relative;
+}
+.logo::before {
+    content: '';
+    width: 0;
+    height: 100%;
+    background-color: #ff0013;
+    position: absolute;
+    transition: all .3s;
+}
+.logo:hover::before {
+    width: 100%;
+}
+.logo svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.logo:hover svg .cls-1 {
+    fill: rgb(255, 255, 255);
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+.products {
+    width: 100%;
+    height: 33%;
+    background-color: rgb(26, 26, 29);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: solid rgb(59, 59, 59);
+    border-width: 1px 0;
+}
+.products li {
+    list-style: none;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+.products li svg {
+    width: 80px;
+    position: absolute;
+}
+.products li:hover svg polygon,
+.products li:hover svg path,
+.products li:hover svg rect{
+    fill: rgb(255, 255, 255);
+}
+.products li p {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    left: 35%;
+}
+
+.important-links {
+    width: 100%;
+    height: 40%;
+    background-color: rgb(26, 26, 29);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: solid rgb(59, 59, 59);
+    border-width: 0 0 1px 0;
+}
+.important-links li {
+    width: 100%;
+    height: 15%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+.important-links li::before {
+    content: '';
+    height: 1rem;
+    width: 1rem;
+    margin-left: 2rem;
+    background-image: url(/Images/Bloody-logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+.important-links li p{
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    position: absolute;
+    left: 35%;
+}
+
+.products li .hidden-back,
+.important-links li .hidden-back {
+    width: 0;
+    height: 100%;
+    background-color: #ff0013;
+    transition: all .3s;
+}
+.products li:hover .hidden-back,
+.important-links li:hover .hidden-back {
+    width: 100%;
+}
+
+.lang-section {
+    width: 100%;
+    height: 3%;
+    background-color: rgb(26, 26, 29);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.lang-section::before {
+    content: '';
+    width: 0;
+    height: 100%;
+    background-color: #ff0013;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    transition: all .3s;
+}
+.lang-section:hover:before {
+    width: 100%;
+}
+.lang-section li {
+    list-style: none;
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    position: absolute;
+    left: 15%;
+}
+.lang-section .lang-text {
+    color: rgb(122, 122, 131);
+    left: 50%;
+}
+.lang-section:hover .lang-text {
+    color: rgb(255, 255, 255);
+}
+@media (max-width: 1000px) {
+    nav {
+        width: 100%;
+        height: 150px;
+        flex-direction: row;
+        position: unset;
+    }
+    .logo {
+        width: 100px;
+        height: 100%;
+        border: solid rgb(59, 59, 59);
+        border-width: 1px 0;
+    }
+    .products {
+        width: calc(100% - 175px);
+        height: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        border-width: 1px;
+    }
+    .products li {
+        width: 0;
+        min-width: 200px;
+        height: 35%;
+    }
+    .important-links {
+        display: none;
+    }
+    .lang-section {
+        width: 75px;
+        height: 100%;
+        flex-direction: column;
+        border: solid rgb(59, 59, 59);
+        border-width: 1px 0;
+    }
+    .lang-section li {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 25%;
+    }
+    .lang-section .lang-text {
+        top: 75%;
+    }
+}
+@media (max-width:600px) {
+    nav {
+        height: 100px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo {
+        width: 80px;
+    }
+    .products,
+    .important-links,
+    .lang-section {
+        display: none;
+    }
+    .hamburger-menu {
+        width: 60px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: rgb(0, 0, 0);
+        position: relative;
+        cursor: pointer;
+    }
+    .hamburger-menu::before {
+        content: '';
+        width: 0;
+        height: 100%;
+        background-color: #ff0013;
+        position: absolute;
+        right: 0;
+        transition: all .3s;
+    }
+    .hamburger-menu:hover:before {
+        width: 100%;
+    }
+    .hamburger-menu .line {
+        width: 70%;
+        height: 5px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        position: relative;
+    }
+    .hamburger-menu p {
+        color: rgb(255, 255, 255);
+        position: relative;
+    }
+}
+
+
+aside {
+    width: calc(100% - 210px);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    left: 210px;
+}
+
+.images-description {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.images-description li {
+    list-style: none;
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 1s;
+    flex-grow: 1;
+}
+.images-description li:hover {
+    flex-grow: 2;
+}
+.images-description li .image{
+    width: 100%;
+    height: 70%;
+    background-image: url(Images/mouse.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.images-description li .headphone-img {
+    background-image: url(Images/headphone.jpg);
+}
+.images-description li .description {
+    width: 100%;
+    height: 25%;
+    background-color: rgb(26, 26, 29);
+    border: solid 1px rgb(59, 59, 59);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.images-description li .description h1,
+.images-description li .description p {
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.see-more {
+    width: 90px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+.see-more p,
+.see-more i {
+    color: rgb(255, 255, 255);
+    transition: all .3s;
+}
+.see-more:hover p,
+.see-more:hover i {
+    color: #ff0013;
+}
+@media (max-width: 1000px) {
+    aside {
+        width: 100%;
+        height: 1200px;
+        position: unset;
+    }
+    .images-description {
+        flex-direction: column;
+        height: 90%;
+    }
+    .images-description li {
+        width: 100%;
+        height: 40%;
+        justify-content: center;
+    }
+    .images-description li .description h1,
+    .images-description li .description p {
+        width: 75%;
+    }
+}
+@media (max-width:600px) {
+    .images-description li {
+        width: 100%;
+    }
+    .images-description li .image {
+        height: 55%;
+    }
+    .images-description li .description {
+        height: 40%;
+    }
+}
+
+
+footer {
+    width: calc(100% - 210px);
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    left: 210px;
+}
+
+.lists {
+    width: 70%;
+    height: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.lists .main-list {
+    width: 150px;
+    height: 80%;
+    padding-left: 10px;
+    border: solid rgb(59, 59, 59);
+    border-width: 0 0 0 1px;
+}
+.lists .main-list h3 {
+    color: rgb(255, 255, 255);
+    font-weight: 100;
+    font-size: 17px;
+    margin-bottom: 1rem;
+}
+.lists .main-list ul li {
+    color: rgb(154, 154, 154);
+    font-size: 15px;
+    list-style: none;
+    margin-top: .5rem;
+    cursor: pointer;
+    transition: all .3s;
+}
+.lists .main-list ul li:hover {
+    color: #ff0013;
+}
+
+.security-info {
+    width: 420px;
+    height: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.security-info li {
+    color: rgb(115, 115, 124);
+    font-size: 13px;
+    list-style: none;
+    border: solid rgb(59, 59, 59);
+    border-width: 0 1px 0 0;
+    padding-right: 10px;
+    cursor: pointer;
+}
+.security-info .copyright-text {
+    cursor: text;
+}
+
+.lists .products-2,
+.security-info .privacy {
+    border: solid rgb(59, 59, 59);
+    border-width: 0;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        width: 100%;
+        height: 420px;
+        position: unset;
+    }
+    .lists {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .lists .main-list {
+        width: 140px;
+        height: 45%;
+    }
+}
+@media (max-width:600px) {
+    .lists {
+        width: 90%;
+    }
+    .lists .main-list {
+        width: 100%;
+        height: 15%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        border-width: 1px 0;
+    }
+    .lists .main-list h3{
+        width: 95px;
+        font-size: 14px;
+        margin: 0;
+    }
+    .lists .main-list ul {
+        width: calc(100% - 105px);
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .lists .main-list ul li {
+        min-width: 45px;
+        font-size: 13px;
+        margin: 0;
+    }
+    .security-info {
+        width: 90%;
+    }
+    .security-info li {
+        font-size: 11px;
+        text-align: center;
+    }
+}
