@@ -1,4 +1,3 @@
-@import url('http://fonts.cdnfonts.com/css/arial');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Signika+Negative&display=swap');
 
 * {
@@ -311,7 +310,7 @@ aside {
 }
 .images-description li .description {
     width: 100%;
-    height: 25%;
+    height: 30%;
     background-color: rgb(26, 26, 29);
     border: solid 1px rgb(59, 59, 59);
     display: flex;
@@ -323,6 +322,7 @@ aside {
 .images-description li .description p {
     color: rgb(255, 255, 255);
     text-align: center;
+    line-height: 30px;
 }
 
 .see-more {
